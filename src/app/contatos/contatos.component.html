@@ -1,0 +1,26 @@
+<!-- LISTAGEM DE CONTATOS -->
+<div *ngFor="let contato de contatos">
+  <!-- COMPONENT CONTACT -->
+  <app-contact
+    [contact]="contato"
+    (contactDeleted)="delete(contato)">
+  </app-contact>
+</div>
+
+<!-- ENQUANTO 'loading' FOR TRUE, A MENSAGEM É MOSTRADA -->
+<div *ngIf="carregando">
+  Carregando...
+</div>
+
+<br /><br />
+
+<!--  FORMULÁRIO PARA INSERÇÃO DE CONTATOS -->
+Nome:
+<input
+  type="text"
+  [(ngModel)]="inputNome" /> <br />
+Fone:
+<input
+  type="text"
+  [(ngModel)]="inputFone" /> <br />
+<button (click)="insertContato()">Inserir</button>
