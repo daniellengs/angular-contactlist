@@ -7,8 +7,8 @@ import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 })
 export class ContatoComponent implements OnInit {
   @Input() contato = {
-    nome: "",
-    fone: ""
+    Nome: "",
+    Telefone: ""
   }
   @Output() contatoDeleted = new EventEmitter();
 

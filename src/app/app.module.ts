@@ -1,5 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
+import { RouterModule }   from '@angular/router';
 import { NgModule } from '@angular/core';
 import { HttpModule } from '@angular/http';
 
@@ -23,6 +24,16 @@ import { SobreComponent } from './sobre/sobre.component';
     BrowserModule,
     HttpModule,
     FormsModule,
+    RouterModule.forRoot([
+     {
+       path: 'contatos',
+       component: ContatosComponent
+     },
+     {
+       path: 'sobre',
+       component: SobreComponent
+     }
+   ])
   ],
   providers: [],
   bootstrap: [AppComponent]

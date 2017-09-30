@@ -1,15 +1,14 @@
-<!-- LISTAGEM DE CONTATOS -->
-<div *ngFor="let contato de contatos">
+<div *ngFor="let contato of contatos">
   <!-- COMPONENT CONTACT -->
-  <app-contact
-    [contact]="contato"
-    (contactDeleted)="delete(contato)">
-  </app-contact>
+  <app-contato
+    [contato]="contato"
+    (contatoDeleted)="delete(contato)">
+  </app-contato>
 </div>
 
 <!-- ENQUANTO 'loading' FOR TRUE, A MENSAGEM É MOSTRADA -->
 <div *ngIf="carregando">
-  Carregando...
+  carregando
 </div>
 
 <br /><br />
@@ -19,7 +18,7 @@ Nome:
 <input
   type="text"
   [(ngModel)]="inputNome" /> <br />
-Fone:
+Telefone:
 <input
   type="text"
   [(ngModel)]="inputFone" /> <br />

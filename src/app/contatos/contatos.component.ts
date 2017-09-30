@@ -1,9 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-//Importando a descrição do objecto Contact
 import { Contato } from './contato.model';
-
-//Importando o Serviço
 import { ContatosService } from './contatos.service';
+
 @Component({
   selector: 'app-contatos',
   templateUrl: './contatos.component.html',
@@ -11,9 +9,7 @@ import { ContatosService } from './contatos.service';
 })
 export class ContatosComponent implements OnInit {
 
-  //Propriedade para controlar o estado de loading da aplicação
   carregando = false;
-  //Lista de contatos
   contatos:Contato[];
   inputNome = "";
   inputFone = "";
@@ -40,7 +36,6 @@ export class ContatosComponent implements OnInit {
 
   //INSERIR CONTATO
   insertContato() {
-    //Carregamos os dados de inputName e inputPhone para construir nosso objeto Contact
     let contato:Contato = {
       Nome: this.inputNome,
       Telefone: this.inputFone
