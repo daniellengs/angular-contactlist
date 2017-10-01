@@ -37,7 +37,7 @@ export class ContatosComponent implements OnInit {
       nome: this.inputNome,
       telefone: this.inputFone
     };
-    this.contatosService.saveContato(contato).subscribe(contato => {this.contatos.push(contato);});
+    this.contatosService.saveContato(contato).subscribe(c => {this.contatos.push(c);});
     this.clearForm();
   }
   clearForm() {

@@ -6,17 +6,32 @@
 </div>
 
 <div *ngIf="carregando">
-  carregando
+  carregando.......
 </div>
 
 <br /><br />
 
-Nome:
-<input
-  type="text"
-  [(ngModel)]="inputNome" /> <br />
-Telefone:
-<input
-  type="text"
-  [(ngModel)]="inputFone" /> <br />
-<button (click)="insertContato()">Inserir</button>
+<div class="alert alert-danger" role="alert">
+  <span class="badge badge-pill badge-light">
+    Nome:
+    <input
+      type="text"
+      [(ngModel)]="inputNome" /> <br />
+  </span>
+
+<br />
+<br />
+
+  <span class="badge badge-pill badge-light">
+
+  Telefone:
+    <input
+      type="text"
+      [(ngModel)]="inputFone" /> <br />
+  </span>
+
+<br />
+<br />
+
+  <button (click)="insertContato()" class="btn btn-lg btn-secondary btn-sm" >Inserir</button>
+</div>
