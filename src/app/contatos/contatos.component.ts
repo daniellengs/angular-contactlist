@@ -8,12 +8,12 @@ import { ContatosService } from './contatos.service';
   styleUrls: ['./contatos.component.css']
 })
 export class ContatosComponent implements OnInit {
+  constructor(private contatosService:ContatosService) { }
 
   carregando = false;
   contatos:Contato[];
   inputNome = "";
   inputFone = "";
-  constructor(private contatosService:ContatosService) { }
 
   //ngOnInit popula a lista de contatos
   ngOnInit() {
@@ -24,11 +24,8 @@ export class ContatosComponent implements OnInit {
       });
   }
 
-  //DELETAR CONTATO
   delete(contato) {
-    //Chamamos o método deleteContact do serviço, dando subscribe
     this.contatosService.deleteContato(contato).subscribe(c => {
-      //Após o retorno do servidor, removemos o contato da nossa lista 'contacts'
       let index = this.contatos.indexOf(contato);
       this.contatos.splice(index, 1);
     });
@@ -37,10 +34,10 @@ export class ContatosComponent implements OnInit {
   //INSERIR CONTATO
   insertContato() {
     let contato:Contato = {
-      Nome: this.inputNome,
-      Telefone: this.inputFone
+      nome: this.inputNome,
+      telefone: this.inputFone
     };
-    this.contatosService.saveContato(contato).subscribe(c => {this.contatos.push(c);});
+    this.contatosService.saveContato(contato).subscribe(contato => {this.contatos.push(contato);});
     this.clearForm();
   }
   clearForm() {

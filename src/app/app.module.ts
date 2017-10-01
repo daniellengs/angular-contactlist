@@ -11,6 +11,8 @@ import { ContatosComponent } from './contatos/contatos.component';
 import { ContatoComponent } from './contatos/contato/contato.component';
 import { SobreComponent } from './sobre/sobre.component';
 
+import { ContatosService } from './contatos/contatos.service';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -26,16 +28,16 @@ import { SobreComponent } from './sobre/sobre.component';
     FormsModule,
     RouterModule.forRoot([
      {
-       path: 'contatos',
+       path: 'Contatos',
        component: ContatosComponent
      },
      {
-       path: 'sobre',
+       path: 'Sobre',
        component: SobreComponent
      }
    ])
   ],
-  providers: [],
+  providers: [ContatosService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

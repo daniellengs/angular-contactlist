@@ -6,7 +6,7 @@ import { Contato } from './contato.model';
 
 @Injectable()
 export class ContatosService {
-  url = "https://nodejs-todolist-api.herokuapp.com/contacts/fhsf";
+  url = "https://nodejs-todolist-api.herokuapp.com/contacts/dngs";
   constructor(private http: Http) { }
   getContatos() {
 

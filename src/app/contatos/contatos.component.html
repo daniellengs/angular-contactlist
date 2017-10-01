@@ -1,19 +1,16 @@
 <div *ngFor="let contato of contatos">
-  <!-- COMPONENT CONTACT -->
   <app-contato
     [contato]="contato"
     (contatoDeleted)="delete(contato)">
   </app-contato>
 </div>
 
-<!-- ENQUANTO 'loading' FOR TRUE, A MENSAGEM É MOSTRADA -->
 <div *ngIf="carregando">
   carregando
 </div>
 
 <br /><br />
 
-<!--  FORMULÁRIO PARA INSERÇÃO DE CONTATOS -->
 Nome:
 <input
   type="text"
