@@ -28,4 +28,8 @@ export class ContatosService {
       .map(res => res.json());
   }
 
+  getContato(id) {
+    return `${this.url}/${id}`;
+  }
+
 }

@@ -28,6 +28,11 @@ import { ContatosService } from './contatos/contatos.service';
     FormsModule,
     RouterModule.forRoot([
      {
+       path: '',
+       redirectTo: '/Contatos',
+       pathMatch: 'full'
+     },
+     {
        path: 'Contatos',
        component: ContatosComponent
      },

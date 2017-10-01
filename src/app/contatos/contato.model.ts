@@ -1,5 +1,11 @@
 export class Contato {
   _id?:string;
-  nome:string;
-  telefone:string;
+  name:string;
+  phone:string;
+  
+  constructor(name, phone) {
+    this.name = name;
+    this.phone = phone;
+    }
+
 }

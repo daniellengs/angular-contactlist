@@ -12,8 +12,8 @@ export class ContatosComponent implements OnInit {
 
   carregando = false;
   contatos:Contato[];
-  inputNome = "";
-  inputFone = "";
+  inputName = "";
+  inputPhone = "";
 
   //ngOnInit popula a lista de contatos
   ngOnInit() {
@@ -34,15 +34,15 @@ export class ContatosComponent implements OnInit {
   //INSERIR CONTATO
   insertContato() {
     let contato:Contato = {
-      nome: this.inputNome,
-      telefone: this.inputFone
+      name: this.inputName,
+      phone: this.inputPhone
     };
     this.contatosService.saveContato(contato).subscribe(c => {this.contatos.push(c);});
     this.clearForm();
   }
   clearForm() {
-    this.inputNome = "";
-    this.inputFone = "";
+    this.inputName = "";
+    this.inputPhone = "";
   }
 
 }

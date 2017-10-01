@@ -1,4 +1,6 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
+import { Contato } from '../contato.model';
+import { ContatosService } from '../contatos.service';
 
 @Component({
   selector: 'app-contato',
@@ -6,16 +8,16 @@ import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
   styleUrls: ['./contato.component.css']
 })
 export class ContatoComponent implements OnInit {
-  @Input() contato = {
-    Nome: "",
-    Telefone: ""
-  }
+
+  constructor(private contatosService :ContatosService) { }
+
+  @Input() contato: Contato;
   @Output() contatoDeleted = new EventEmitter();
 
   remove() {
     this.contatoDeleted.emit();
   }
-  constructor() { }
+
   ngOnInit() {
   }
 
